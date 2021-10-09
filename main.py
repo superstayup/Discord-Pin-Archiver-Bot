@@ -106,7 +106,7 @@ async def archive_message(message):
         current_date = datetime.datetime.utcfromtimestamp(int(time.time()))
 
         emb = discord.Embed(
-            description=pin_content
+            description=pin_content,
             color=0x7289da,
             timestamp=current_date)  # Initializes embed with description pin_content.
         emb.set_author(

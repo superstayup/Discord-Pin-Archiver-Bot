@@ -1,14 +1,10 @@
 import argparse
-import configparser
-import discord
-import sys
 import asyncio
-import sqlite3
-from ast import literal_eval
-import requests
-import logging
+import configparser
 import datetime
-import time
+import discord
+import sqlite3
+import sys
 
 
 client = discord.Client()
@@ -110,9 +106,9 @@ async def archive_message(message):
         current_date = datetime.datetime.utcfromtimestamp(int(time.time()))
 
         emb = discord.Embed(
-            description=pin_content,
+            description=pin_content
             color=0x7289da,
-            timestamp=current_date)  # Initalizes embed with description pin_content.
+            timestamp=current_date)  # Initializes embed with description pin_content.
         emb.set_author(
             name=name,
             icon_url=avatar,
@@ -120,7 +116,7 @@ async def archive_message(message):
                 server, message.channel.id, message.id)
             )  # Sets author and avatar url of the author of pinned message.
 
-            # Set attachemnt image url as embed image if it exists
+            # Set attachment image url as embed image if it exists
         if message.attachments:
             img_url = message.attachments[0].url
             emb.set_image(url=img_url)
